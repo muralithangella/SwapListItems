@@ -28,6 +28,7 @@ export default function App() {
         ItemsList1[index].title = ItmesList2[index].title;
         ItmesList2[index].title = temp;
       }
+      ItemsList1[index].checked = false;
     });
     setItems(ItmesList2);
     setItems1(ItemsList1);
