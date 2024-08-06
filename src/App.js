@@ -17,7 +17,7 @@ export default function App() {
   const handleChecked = (index) => {
     const updatedCheckedList1 = [...items1];
     updatedCheckedList1[index].checked = !updatedCheckedList1[index].checked;
-    setState(updatedCheckedList1[index].checked);
+    setState(updatedCheckedList1);
   };
   const handleSubmit = () => {
     const ItemsList1 = [...items1];
