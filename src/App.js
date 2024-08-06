@@ -19,7 +19,7 @@ export default function App() {
     updatedCheckedList1[index].checked = !updatedCheckedList1[index].checked;
     setState(updatedCheckedList1[index].checked);
   };
-  const handleSubmit = (index, e) => {
+  const handleSubmit = () => {
     const ItemsList1 = [...items1];
     const ItmesList2 = [...items];
     ItemsList1.forEach((item, index) => {
@@ -29,6 +29,8 @@ export default function App() {
         ItmesList2[index].title = temp;
       }
     });
+    setItems(ItmesList2);
+    setItems1(ItemsList1);
   };
   return (
     <div className="App">
@@ -42,7 +44,7 @@ export default function App() {
                 <input
                   type="checkbox"
                   checked={item.checked}
-                  onClick={() => handleChecked(index)}
+                  onChange={() => handleChecked(index)}
                 />
                 {item.title}
               </li>
@@ -58,7 +60,7 @@ export default function App() {
           ))}
         </ul>
       </div>
-      <button type="sumbit" onClick={handleSubmit()}>
+      <button type="sumbit" onClick={() => handleSubmit()}>
         Swap the List Items
       </button>
     </div>
